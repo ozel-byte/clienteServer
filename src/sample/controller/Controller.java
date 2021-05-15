@@ -177,7 +177,7 @@ public class Controller implements Observer {
         nameUser.setText(camponombreuser.getText());
 
         try {
-            Socket socket = new Socket("192.168.0.11",3001);
+            Socket socket = new Socket("ip",3001);
             try {
                 ObjectOutputStream data = new ObjectOutputStream(socket.getOutputStream());
                 Cliente cliente = new Cliente(camponombreuser.getText(),puntos,0.0,0.0,0.0,0.0);
@@ -269,7 +269,7 @@ public class Controller implements Observer {
                 cuadricula.setVisible(false);
                 bandera=false;
                 try {
-                    Socket socket = new Socket("192.168.0.11",3003);
+                    Socket socket = new Socket("ip",3003);
                     DataOutputStream dataPosicion = new DataOutputStream(socket.getOutputStream());
                     dataPosicion.writeUTF(valorO.getId());
                     Integer idvalor = Integer.parseInt(String.valueOf(valorX.getId().charAt(valorX.getId().length()-1)));
