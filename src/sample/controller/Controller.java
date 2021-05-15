@@ -154,7 +154,7 @@ public class Controller {
         nameUser.setText(camponombreuser.getText());
 
         try {
-            Socket socket = new Socket("192.168.0.11",3001);
+            Socket socket = new Socket("ip",3001);
             try {
                 ObjectOutputStream data = new ObjectOutputStream(socket.getOutputStream());
                 Cliente cliente = new Cliente(camponombreuser.getText(),puntos,0.0,0.0,0.0,0.0);
@@ -213,7 +213,7 @@ public class Controller {
             valorX.setVisible(false);
             cuadricula.setVisible(false);
             try {
-                Socket socket = new Socket("192.168.0.11",3003);
+                Socket socket = new Socket("ip",3003);
                 DataOutputStream dataPosicion = new DataOutputStream(socket.getOutputStream());
                 dataPosicion.writeUTF(valorO.getId());
                 dataPosicion.close();
@@ -227,7 +227,7 @@ public class Controller {
             valorX.setVisible(true);
             cuadricula.setVisible(false);
             try {
-                Socket socket = new Socket("192.168.0.11",3003);
+                Socket socket = new Socket("ip",3003);
                 DataOutputStream dataPosicion = new DataOutputStream(socket.getOutputStream());
                 dataPosicion.writeUTF(valorX.getId());
                 dataPosicion.close();
